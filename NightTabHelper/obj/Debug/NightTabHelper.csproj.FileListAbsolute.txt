@@ -1,0 +1,10 @@
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe.config
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.pdb
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csprojResolveAssemblyReference.cache
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Form1.resources
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Properties.Resources.resources
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.GenerateResource.cache
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.CoreCompileInputs.cache
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.exe
+c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.pdb
