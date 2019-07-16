@@ -1,0 +1,5 @@
+*.exe
+*.ide-shm
+*.ide-wal
+*.sqlite
+*.pdb

@@ -2,21 +2,23 @@
 
 
 namespace NightTabHelper
-public class Accent
 {
-    public Accent()
+    public class Accent
     {
-        color = new Color();
-    }
-    private string overRide = "";
-    public Color color;
-
-    public string OverRide
-    {
-        get
+        public Accent()
         {
-            return overRide;
+            color = new Color();
         }
-        set { overRide = value; }
+        private string overRide = "";
+        public Color color;
+
+        public string OverRide
+        {
+            get
+            {
+                return overRide;
+            }
+            set { overRide = value; }
+        }
     }
 }

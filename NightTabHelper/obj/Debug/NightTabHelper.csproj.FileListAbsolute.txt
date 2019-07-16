@@ -8,3 +8,13 @@ c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelpe
 c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.CoreCompileInputs.cache
 c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.exe
 c:\users\kyle\source\repos\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.pdb
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csprojResolveAssemblyReference.cache
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Form1.resources
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Properties.Resources.resources
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.GenerateResource.cache
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.CoreCompileInputs.cache
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.exe
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.pdb
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe.config
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe
+F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.pdb
