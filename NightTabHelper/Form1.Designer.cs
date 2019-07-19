@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.program = new Program();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();

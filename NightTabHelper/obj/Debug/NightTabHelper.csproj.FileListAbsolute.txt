@@ -18,3 +18,16 @@ F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\obj\Debug\NightTa
 F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe.config
 F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe
 F:\User Folders\Documents\GitHub\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.pdb
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe.config
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.exe
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Debug\NightTabHelper.pdb
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csprojAssemblyReference.cache
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Form1.resources
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.Properties.Resources.resources
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.GenerateResource.cache
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.CoreCompileInputs.cache
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.exe
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.pdb
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Debug\NightTabHelper.csproj.CopyComplete

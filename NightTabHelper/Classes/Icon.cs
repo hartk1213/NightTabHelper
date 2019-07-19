@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NightTabHelper
+namespace NightTabHelper.Classes
 {
     public class Icon
     {

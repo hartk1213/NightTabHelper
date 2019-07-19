@@ -1,0 +1,10 @@
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Release\NightTabHelper.exe.config
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Release\NightTabHelper.exe
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\bin\Release\NightTabHelper.pdb
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.Form1.resources
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.Properties.Resources.resources
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.csproj.GenerateResource.cache
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.csproj.CoreCompileInputs.cache
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.exe
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.pdb
+C:\Users\khart\source\repos\NightTabHelper\NightTabHelper\NightTabHelper\obj\Release\NightTabHelper.csprojAssemblyReference.cache

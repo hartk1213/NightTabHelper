@@ -10,3 +10,7 @@
 *.cache
 NightTabHelper/obj/Release/NightTabHelper.csproj.CoreCompileInputs.cache
 NightTabHelper/obj/Debug/NightTabHelper.csproj.CoreCompileInputs.cache
+NightTabHelper/bin/Debug/NightTabHelper.pdb
+NightTabHelper/bin/Debug/NightTabHelper.exe
+NightTabHelper/bin/Release/NightTabHelper.exe.config
+*.exe
