@@ -3,3 +3,10 @@
 *.ide-wal
 *.sqlite
 *.pdb
+.vs/NightTabHelper/v16/.suo
+*.lock
+*.ide
+*.cache
+*.cache
+NightTabHelper/obj/Release/NightTabHelper.csproj.CoreCompileInputs.cache
+NightTabHelper/obj/Debug/NightTabHelper.csproj.CoreCompileInputs.cache
