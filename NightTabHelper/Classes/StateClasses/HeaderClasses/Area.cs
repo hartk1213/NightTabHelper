@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace NightTabHelper.Classes.StateClasses.HeaderClasses
 {
-    public class Area
+    public class Area : Header
     {
         #region Private
         private int width;
-        private string alignment;
         #endregion
 
         #region Properties
@@ -18,11 +17,6 @@ namespace NightTabHelper.Classes.StateClasses.HeaderClasses
         {
             get { return width; }
             set { width = value; }
-        }
-        public string Alignment
-        {
-            get { return alignment; }
-            set { alignment = value; }
         }
         #endregion
         public Area()

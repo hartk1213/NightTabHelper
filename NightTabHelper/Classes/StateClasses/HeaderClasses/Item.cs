@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace NightTabHelper.Classes.StateClasses.HeaderClasses
 {
-    public class Item
+    public class Item : Header
     {
         #region Private
-
+     
         #endregion
         #region Properties
+      
         #endregion
         public Item() { }
     }

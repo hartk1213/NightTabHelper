@@ -15,7 +15,6 @@ namespace NightTabHelper
     public partial class Form1 : Form
     {
         public Program program;
-        public static List<Header> hcList;
 
         public Form1()
         {

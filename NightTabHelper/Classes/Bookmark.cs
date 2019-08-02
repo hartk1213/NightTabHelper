@@ -74,9 +74,13 @@ namespace NightTabHelper.Classes
 
         public Bookmark()
         {
+            display = "";
+            letter = "";
             icon = new Icon();
+            name = "";
+            url = "";
+            timeStamp = "";
             accent = new Accent();
         }
-
     }
 }

@@ -13,7 +13,7 @@ namespace NightTabHelper.Classes
         private bool nighttab = false;
         private string version = "";
         private State state;
-        private Header header;
+        private List<Bookmark> bookmarks;
         #endregion
 
         #region Properties
@@ -41,21 +41,20 @@ namespace NightTabHelper.Classes
             }
             set { state = value; }
         }
-        public Header Header
+        public List<Bookmark> Bookmarks
         {
             get
             {
-                return header;
+                return bookmarks;
             }
-            set { header = value; }
+            set { bookmarks = value; }
         }
         #endregion
 
         public NightTabClass()
         {
             state = new State();
-            header = new Header();
-
+            bookmarks = new List<Bookmark>();
         }
 
     }
