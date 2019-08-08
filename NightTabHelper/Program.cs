@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using NightTabHelper.Classes;
+using NightTabHelper.Classes.BookmarkClasses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,15 +21,15 @@ namespace NightTabHelper
         public string bookmarkjs = "";
         public string statejs = "";
         public string bookmarksFile = "";
+        public string stateFile = "";
         bool error = false;
-        public static List<NightTabClass> ntList;
         public NightTabClass nightTab = new NightTabClass();
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new NightTabHelper());
         }
 
         private void SetText(string text)
@@ -46,7 +47,8 @@ namespace NightTabHelper
                     var sr = new StreamReader(openFileDialog1.FileName);
                     ParseInput(sr.ReadToEnd());
                     CreateFile();
-                    WriteOutFile(bookmarksFile);
+                    WriteOutFile(bookmarksFile, "Bookmark");
+                    WriteOutFile(stateFile, "State");
                     if (!error)
                     {
                         MessageBox.Show($"File Created Successfully");
@@ -65,7 +67,7 @@ namespace NightTabHelper
 
             try
             {
-                bookmarkjs = "" ;
+                bookmarkjs = "";
                 foreach (Bookmark bm in nightTab.Bookmarks)
                 {
                     string tempBookmarks = "";
@@ -78,9 +80,9 @@ namespace NightTabHelper
                     valueList.Add(bm.Name);//5
                     valueList.Add(bm.Url);//6
                     valueList.Add(bm.Accent.OverRide);//7
-                    valueList.Add(bm.Accent.color.R);//8
-                    valueList.Add(bm.Accent.color.G);//9
-                    valueList.Add(bm.Accent.color.B);//10
+                    valueList.Add(bm.Accent.Color.R);//8
+                    valueList.Add(bm.Accent.Color.G);//9
+                    valueList.Add(bm.Accent.Color.B);//10
                     valueList.Add(bm.Timestamp);//11
 
                     tempBookmarks += "[\ndisplay: \"{0}\", \n" +
@@ -110,14 +112,140 @@ namespace NightTabHelper
             catch (Exception ee)
             {
                 error = true;
-                MessageBox.Show($"error writing new string.\n\nError message: {ee.Message}");
+                MessageBox.Show($"error writing new bookmarks.js file.\n\nError message: {ee.Message}");
             }
+
+            try {
+                statejs = "";
+                List<string> valueList = new List<string>();
+                #region Building Value List
+                valueList.Add(nightTab.State.Header.Area.Width.ToString().ToLower()); //Header.Area
+                valueList.Add(nightTab.State.Header.Area.Alignment.ToString().ToLower());//Header.Area
+                valueList.Add(nightTab.State.Header.Item.Alignment.ToString().ToLower());//Header.Item
+                valueList.Add(nightTab.State.Header.Clock.Hours.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Hours.Display.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Minutes.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Minutes.Display.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Seconds.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Seconds.Display.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Separator.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Meridiem.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Hour24.Show.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Clock.Size.ToString().ToLower());//Header.Clock
+                valueList.Add(nightTab.State.Header.Date.Day.Show.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Day.Display.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Day.WeekStart.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Day.Length.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Date.Show.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Date.Display.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Date.Ordinal.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Month.Show.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Month.Display.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Month.Length.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Month.Ordinal.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Year.Show.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Year.Display.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Separator.Show.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Format.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Date.Size.ToString().ToLower());//Header.Date
+                valueList.Add(nightTab.State.Header.Search.Show.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Style.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Width.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Focus.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Engine.Selected.ToString().ToLower());//Header.Search -33
+                valueList.Add(nightTab.State.Header.Search.Engine.Custom.Url.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Engine.Custom.Name.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Text.Alignment.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Search.Size.ToString().ToLower());//Header.Search
+                valueList.Add(nightTab.State.Header.Button.EditAdd.Show.ToString().ToLower());//Header.Button
+                valueList.Add(nightTab.State.Header.Button.Accent.Show.ToString().ToLower());//Header.Button
+                valueList.Add(nightTab.State.Header.Button.Style.ToString().ToLower());//Header.Button
+                valueList.Add(nightTab.State.Header.Button.Size.ToString().ToLower());//Header.Button -41
+                valueList.Add(nightTab.State.Header.Shade.Show.ToString().ToLower());//Header.Shade
+                valueList.Add(nightTab.State.Header.Shade.Style.ToString().ToLower());//Header.Shade
+                valueList.Add(nightTab.State.Header.Shade.Opacity.ToString().ToLower());//Header.Shade - 44
+                valueList.Add(nightTab.State.Header.Border.Top.ToString().ToLower());//Header.Border
+                valueList.Add(nightTab.State.Header.Border.Bottom.ToString().ToLower());//Header.Border
+                valueList.Add(nightTab.State.Header.Greeting.Show.ToString().ToLower());//Header.Greeting
+                valueList.Add(nightTab.State.Header.Greeting.Type.ToString().ToLower());//Header.Greeting
+                valueList.Add(nightTab.State.Header.Greeting.Name.ToString());//Header.Greeting
+                valueList.Add(nightTab.State.Header.Greeting.Size.ToString().ToLower());//Header.Greeting
+                valueList.Add(nightTab.State.Header.Transitional.Show.ToString().ToLower());//Header.Transitional
+                valueList.Add(nightTab.State.Header.Transitional.Type.ToString().ToLower());//Header.Transitional
+                valueList.Add(nightTab.State.Header.Transitional.Size.ToString().ToLower());//Header.Transitional 
+                valueList.Add(nightTab.State.Header.Radius.ToString().ToLower());//Header.Transitional - 54
+                valueList.Add(nightTab.State.Link.Area.Width.ToString().ToLower());//Link.Area
+                valueList.Add(nightTab.State.Link.Area.Alignment.ToString().ToLower());//Link.Area
+                valueList.Add(nightTab.State.Link.Item.Display.Show.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Display.Size.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Display.Alignment.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Display.Letter.Size.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Display.Icon.Size.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Name.Show.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Name.Size.ToString().ToLower());//Link.Item - 63
+                valueList.Add(nightTab.State.Link.Item.Url.Show.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Line.Show.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.HoverScale.Show.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Order.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.Size.ToString().ToLower());//Link.Item
+                valueList.Add(nightTab.State.Link.Item.NewTab.ToString().ToLower());//Link.Item -69
+                valueList.Add(nightTab.State.Link.Show.ToString().ToLower());//Link.Show
+                valueList.Add(nightTab.State.Link.Edit.ToString().ToLower());//Link.Edit
+                valueList.Add(nightTab.State.Link.Style.ToString().ToLower());//Link.Style
+                valueList.Add(nightTab.State.Link.NewTab.ToString().ToLower());//Link.NewTab
+                valueList.Add(nightTab.State.Layout.Alignment.ToString().ToLower());//Layout.Alignment
+                valueList.Add(nightTab.State.Layout.Order.ToString().ToLower());//Layout.Order
+                valueList.Add(nightTab.State.Layout.Padding.ToString().ToLower());//Layout.Padding
+                valueList.Add(nightTab.State.Layout.Gutter.ToString().ToLower());//Layout.Gutter
+                valueList.Add(nightTab.State.Layout.Width.ToString().ToLower());//Layout.Width
+                valueList.Add(nightTab.State.Layout.ScrollPastEnd.ToString().ToLower());//Layout.ScrollPastEnd
+                valueList.Add(nightTab.State.Layout.Title.ToString());//Layout.Title - 80
+                valueList.Add(nightTab.State.Theme.Accent.Current.R.ToString().ToLower());//Theme.Accent
+                valueList.Add(nightTab.State.Theme.Accent.Current.G.ToString().ToLower());//Theme.Accent
+                valueList.Add(nightTab.State.Theme.Accent.Current.B.ToString().ToLower());//Theme.Accent
+                valueList.Add(nightTab.State.Theme.Accent.Random.Active.ToString().ToLower());//Theme.Accent
+                valueList.Add(nightTab.State.Theme.Accent.Random.Style.ToString().ToLower());//Theme.Accent
+                valueList.Add(nightTab.State.Theme.Style.ToString().ToLower());//Theme.Style
+                valueList.Add(nightTab.State.Theme.Radius.ToString().ToLower());//Theme.Radius -87
+                valueList.Add(nightTab.State.Background.Image.Show.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Url.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Blur.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Scale.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Opacity.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Grayscale.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Background.Image.Accent.ToString().ToLower());//Background.Image
+                valueList.Add(nightTab.State.Edge.ToString().ToLower());//Edge
+                valueList.Add(nightTab.State.Search.ToString().ToLower());//Search
+                valueList.Add(nightTab.State.Menu.ToString().ToLower());//Menu
+                valueList.Add(nightTab.State.Modal.ToString().ToLower());//Modal
+                valueList.Add(nightTab.State.AutoSuggest.ToString().ToLower());//AutoSuggest - 99
+                #endregion
+                var sr = new StreamReader(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "oldState.js"));
+                stateFile = String.Format(sr.ReadToEnd(), valueList.ToArray());
+                stateFile = stateFile.Replace('¿', '{').Replace('╡', '}');
+            }
+
+            catch (Exception ee)
+            {
+
+                error = true;
+                MessageBox.Show($"error writing new state.js file.\n\nError message: {ee.Message}");
+            }
+                
         }
 
-        private  void WriteOutFile(string outputData)
+        private  void WriteOutFile(string outputData, string fileType)
         {
             try {
-                System.IO.File.WriteAllText(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "bookmarks.js"), outputData);
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "JS File| *.js";
+                saveFileDialog1.Title = "Save a " + fileType + " File";
+                saveFileDialog1.ShowDialog();
+                if (saveFileDialog1.FileName != "")
+                {
+                    System.IO.File.WriteAllText(saveFileDialog1.FileName, outputData);
+                }
+                //System.IO.File.WriteAllText(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "bookmarks.js"), outputData);
             }
             catch (Exception ee)
             {
@@ -130,6 +258,7 @@ namespace NightTabHelper
         {
             try
             {
+
                 JsonSerializerSettings jss = new JsonSerializerSettings();
                 jss.NullValueHandling = NullValueHandling.Ignore;
                 nightTab = JsonConvert.DeserializeObject<NightTabClass>(inputData, jss);

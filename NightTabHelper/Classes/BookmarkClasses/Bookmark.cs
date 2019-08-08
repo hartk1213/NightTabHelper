@@ -1,5 +1,6 @@
-﻿using System;
-namespace NightTabHelper.Classes
+﻿using NightTabHelper.BookmarkClasses.Classes;
+using System;
+namespace NightTabHelper.Classes.BookmarkClasses
 {
     public class Bookmark
     {
@@ -76,11 +77,9 @@ namespace NightTabHelper.Classes
         {
             display = "";
             letter = "";
-            icon = new Icon();
             name = "";
             url = "";
             timeStamp = "";
-            accent = new Accent();
         }
     }
 }

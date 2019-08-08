@@ -4,20 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightTabHelper.Classes
+namespace NightTabHelper.BookmarkClasses.Classes
 {
     public class Color
     {
-        public Color()
-        {
-            r = "41";
-            g = "119";
-            b = "244";
-        }
+        #region private
         private string r = "0";
         private string g = "0";
         private string b = "0";
-
+        #endregion
+        #region Properties
         public string R
         {
             get
@@ -49,6 +45,13 @@ namespace NightTabHelper.Classes
                 return b;
             }
             set { b = value; }
+        }
+        #endregion
+        public Color()
+        {
+            r = "41";
+            g = "119";
+            b = "244";
         }
     }
 }

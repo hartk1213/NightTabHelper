@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NightTabHelper.Classes.StateClasses.HeaderClasses
 {
-    public class Clock
+    public class Clock : Header
     {
         #region Private
 
@@ -16,12 +16,8 @@ namespace NightTabHelper.Classes.StateClasses.HeaderClasses
         private Separator separator;
         private Meridiem meridiem;
         private Hour24 hour24;
-        private decimal size;
         #endregion
         #region Properties
-
-      
-      
         public Hours Hours
         {
             get { return hours; }
@@ -52,13 +48,9 @@ namespace NightTabHelper.Classes.StateClasses.HeaderClasses
             get { return hour24; }
             set { hour24 = value; }
         }
-        public decimal Size
-        {
-            get { return size; }
-            set { size = value; }
-        }
         #endregion
-        public Clock() { }
+        public Clock() {
+        }
     }
 
     #region Sub-Classes
@@ -77,11 +69,6 @@ namespace NightTabHelper.Classes.StateClasses.HeaderClasses
     public class Seconds : Clock
     {
         public Seconds()
-        { }
-    }
-    public class Separator : Clock
-    {
-        public Separator()
         { }
     }
 

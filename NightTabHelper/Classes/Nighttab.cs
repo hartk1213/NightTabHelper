@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NightTabHelper.Classes.BookmarkClasses;
 using NightTabHelper.Classes.StateClasses;
 
 namespace NightTabHelper.Classes
@@ -10,8 +11,8 @@ namespace NightTabHelper.Classes
     public class NightTabClass
     {
         #region Private
-        private bool nighttab = false;
-        private string version = "";
+        private bool nighttab;
+        private string version;
         private State state;
         private List<Bookmark> bookmarks;
         #endregion
@@ -53,8 +54,8 @@ namespace NightTabHelper.Classes
 
         public NightTabClass()
         {
-            state = new State();
-            bookmarks = new List<Bookmark>();
+            nighttab = false;
+            version = "";
         }
 
     }

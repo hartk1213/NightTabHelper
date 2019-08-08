@@ -1,13 +1,18 @@
-﻿using NightTabHelper.Classes.StateClasses;
+﻿using NightTabHelper.Classes.StateClasses.ThemeClasses;
+using NightTabHelper.Classes.StateClasses.LinkClasses;
+using NightTabHelper.Classes.StateClasses.LayoutClasses;
+using NightTabHelper.Classes.BookmarkClasses;
+using NightTabHelper.Classes.StateClasses.BackgroundClasses;
+using NightTabHelper.Classes.StateClasses.HeaderClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightTabHelper.Classes
+namespace NightTabHelper.Classes.StateClasses
 {
-    public class State
+    public class State : NightTabClass
     {
         #region Private
         private Header header;
@@ -23,6 +28,32 @@ namespace NightTabHelper.Classes
         #endregion
 
         #region Properties
+
+        public bool Edge
+        {
+            get { return edge; }
+            set { edge = value; }
+        }
+        public bool Search
+        {
+            get { return search; }
+            set { search = value; }
+        }
+        public bool Menu
+        {
+            get { return menu; }
+            set { menu = value; }
+        }
+        public bool Modal
+        {
+            get { return modal; }
+            set { modal = value; }
+        }
+        public bool AutoSuggest
+        {
+            get { return autoSuggest; }
+            set { autoSuggest = value; }
+        }
 
         public Header Header
         {
@@ -56,7 +87,7 @@ namespace NightTabHelper.Classes
             }
             set { theme = value; }
         }
-        public Background Background 
+        public Background Background
         {
             get
             {
@@ -67,7 +98,13 @@ namespace NightTabHelper.Classes
 
         #endregion
 
-        public State() { }
+        public State() {
+            edge = false;
+            search = false;
+            menu = false;
+            modal = false;
+            autoSuggest = false;
+        }
 
     }
 }

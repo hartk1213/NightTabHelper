@@ -570,6 +570,25 @@ b: 0
 }
 }, 
  timeStamp: 1546453108071
+},{
+display: "letter", 
+letter: "New Tab", 
+icon: {
+ name: "",
+ prefix: "",
+ label: ""
+},
+  name: "Test",
+  url: "test",
+accent: {
+override: true,
+color: { 
+r: 217, 
+g: 68, 
+b: 172
+}
+}, 
+ timeStamp: 1565222529017
 }];
 
   var get = function(data) {

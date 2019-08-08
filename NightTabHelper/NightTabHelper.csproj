@@ -64,33 +64,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Accent.cs" />
-    <Compile Include="Classes\StateClasses\Background.cs" />
-    <Compile Include="Classes\Color.cs" />
-    <Compile Include="Classes\StateClasses\Header.cs" />
+    <Compile Include="Classes\BookmarkClasses\Accent.cs" />
+    <Compile Include="Classes\StateClasses\BackgroundClasses\Background.cs" />
+    <Compile Include="Classes\BookmarkClasses\Color.cs" />
+    <Compile Include="Classes\StateClasses\HeaderClasses\Header.cs" />
     <Compile Include="Classes\Nighttab.cs" />
-    <Compile Include="Classes\State.cs" />
+    <Compile Include="Classes\StateClasses\State.cs" />
     <Compile Include="Classes\StateClasses\HeaderClasses\Area.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Border.cs" />
     <Compile Include="Classes\StateClasses\HeaderClasses\Button.cs" />
     <Compile Include="Classes\StateClasses\HeaderClasses\Clock.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Date.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Greeting.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Item.cs" />
     <Compile Include="Classes\StateClasses\HeaderClasses\Search.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Shade.cs" />
-    <Compile Include="Classes\StateClasses\HeaderClasses\Transitional.cs" />
-    <Compile Include="Classes\Icon.cs" />
-    <Compile Include="Classes\StateClasses\Layout.cs" />
-    <Compile Include="Classes\StateClasses\Link.cs" />
-    <Compile Include="Classes\StateClasses\Theme.cs" />
+    <Compile Include="Classes\BookmarkClasses\Icon.cs" />
+    <Compile Include="Classes\StateClasses\LayoutClasses\Layout.cs" />
+    <Compile Include="Classes\StateClasses\LinkClasses\Item.cs" />
+    <Compile Include="Classes\StateClasses\LinkClasses\Link.cs" />
+    <Compile Include="Classes\StateClasses\ThemeClasses\Theme.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Bookmark.cs" />
+    <Compile Include="Classes\BookmarkClasses\Bookmark.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -135,6 +130,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Output\oldBookmarks.js" />
+    <Content Include="Output\oldState.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\MiscClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

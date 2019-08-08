@@ -20,6 +20,8 @@ namespace NightTabHelper.Classes.StateClasses.HeaderClasses
         }
         #endregion
         public Area()
-        { }
+        {
+            width = 0;
+        }
     }
 }

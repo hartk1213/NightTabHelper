@@ -4,19 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NightTabHelper.Classes
+namespace NightTabHelper.BookmarkClasses.Classes
 {
     public class Icon
     {
-        public Icon()
-        {
-            name = "";
-            prefix = "";
-            label = "";
-        }
+        #region private
         private string name = "";
         private string prefix = "";
         private string label = "";
+        #endregion
+        #region Properties
         public string Name
         {
             get
@@ -40,6 +37,13 @@ namespace NightTabHelper.Classes
                 return label;
             }
             set { label = value; }
+        }
+        #endregion
+        public Icon()
+        {
+            name = "";
+            prefix = "";
+            label = "";
         }
     }
 }
