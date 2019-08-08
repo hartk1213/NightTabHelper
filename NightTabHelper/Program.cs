@@ -32,13 +32,7 @@ namespace NightTabHelper
             Application.Run(new NightTabHelper());
         }
 
-        private void SetText(string text)
-        {
-
-        }
-
-
-        public void buttonClicked(OpenFileDialog openFileDialog1)
+        public void selectButtonClicked(OpenFileDialog openFileDialog1, List<Button> btnList)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -47,13 +41,11 @@ namespace NightTabHelper
                     var sr = new StreamReader(openFileDialog1.FileName);
                     ParseInput(sr.ReadToEnd());
                     CreateFile();
-                    WriteOutFile(bookmarksFile, "Bookmark");
-                    WriteOutFile(stateFile, "State");
                     if (!error)
                     {
-                        MessageBox.Show($"File Created Successfully");
+                        btnList[0].Visible = false;
+                        btnList[1].Visible = true;
                     }
-
                 }
                 catch (SecurityException ex)
                 {
@@ -62,9 +54,19 @@ namespace NightTabHelper
             }
         }
 
+        public void exportButtonClicked(List<Button> btnList)
+        {
+            WriteOutFile(bookmarksFile, "bookmarks");
+            WriteOutFile(stateFile, "state");
+            if (!error)
+            {
+                btnList[0].Visible = true;
+                btnList[1].Visible = false;
+            }
+        }
+
         private void CreateFile()
         {
-
             try
             {
                 bookmarkjs = "";
@@ -236,10 +238,12 @@ namespace NightTabHelper
 
         private  void WriteOutFile(string outputData, string fileType)
         {
-            try {
+            try
+            {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                 saveFileDialog1.Filter = "JS File| *.js";
                 saveFileDialog1.Title = "Save a " + fileType + " File";
+                saveFileDialog1.FileName = fileType;
                 saveFileDialog1.ShowDialog();
                 if (saveFileDialog1.FileName != "")
                 {
@@ -251,6 +255,13 @@ namespace NightTabHelper
             {
                 error = true;
                 MessageBox.Show($"error writing file.\n\nError message: {ee.Message}");
+            }
+            finally
+            {
+                if (!error)
+                {
+                    MessageBox.Show($"{fileType} file Created Successfully");
+                }
             }
         }
 

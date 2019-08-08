@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\NightTabHelper"
+    "\\NightTabHelper",
+    "\\NightTabHelper\\Classes",
+    "\\NightTabHelper\\Output"
   ],
   "SelectedNode": "\\NightTabHelper.sln",
   "PreviewInSolutionExplorer": false
