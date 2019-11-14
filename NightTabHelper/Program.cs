@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using NightTabHelper.Classes;
 using NightTabHelper.Classes.BookmarkClasses;
+using NightTabHelper.Classes.TemplateClasses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,7 @@ namespace NightTabHelper
         public string statejs = "";
         public string bookmarksFile = "";
         public string stateFile = "";
+        public string filePath = "";
         bool error = false;
         public NightTabClass nightTab = new NightTabClass();
         [STAThread]
@@ -32,19 +34,22 @@ namespace NightTabHelper
             Application.Run(new NightTabHelper());
         }
 
-        public void selectButtonClicked(OpenFileDialog openFileDialog1, List<Button> btnList)
+        public void selectButtonClicked(OpenFileDialog openFileDialog1)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
+
                     var sr = new StreamReader(openFileDialog1.FileName);
+                    filePath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
                     ParseInput(sr.ReadToEnd());
                     CreateFile();
+                    WriteOutFile(bookmarksFile, "bookmarks");
+                    WriteOutFile(stateFile, "state");
                     if (!error)
                     {
-                        btnList[0].Visible = false;
-                        btnList[1].Visible = true;
+                        MessageBox.Show($"bookmarks.js and state.js have been successfully created in the following directory \n" + filePath);
                     }
                 }
                 catch (SecurityException ex)
@@ -54,19 +59,9 @@ namespace NightTabHelper
             }
         }
 
-        public void exportButtonClicked(List<Button> btnList)
-        {
-            WriteOutFile(bookmarksFile, "bookmarks");
-            WriteOutFile(stateFile, "state");
-            if (!error)
-            {
-                btnList[0].Visible = true;
-                btnList[1].Visible = false;
-            }
-        }
-
         private void CreateFile()
         {
+            TemplateClass tc = new TemplateClass();
             try
             {
                 bookmarkjs = "";
@@ -108,8 +103,8 @@ namespace NightTabHelper
 
                     bookmarkjs += string.Format(tempBookmarks, valueList.ToArray()).Replace("[", "{").Replace("]", "}");
                 }
-                var sr = new StreamReader(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "oldBookmarks.js"));
-                bookmarksFile = sr.ReadToEnd().Replace("{0}", bookmarkjs);
+             
+                bookmarksFile = tc.olbookmarksjs.Replace("{0}", bookmarkjs);
             }
             catch (Exception ee)
             {
@@ -222,8 +217,7 @@ namespace NightTabHelper
                 valueList.Add(nightTab.State.Modal.ToString().ToLower());//Modal
                 valueList.Add(nightTab.State.AutoSuggest.ToString().ToLower());//AutoSuggest - 99
                 #endregion
-                var sr = new StreamReader(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "oldState.js"));
-                stateFile = String.Format(sr.ReadToEnd(), valueList.ToArray());
+                stateFile = String.Format(tc.oldStatejs, valueList.ToArray());
                 stateFile = stateFile.Replace('¿', '{').Replace('╡', '}');
             }
 
@@ -240,28 +234,12 @@ namespace NightTabHelper
         {
             try
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "JS File| *.js";
-                saveFileDialog1.Title = "Save a " + fileType + " File";
-                saveFileDialog1.FileName = fileType;
-                saveFileDialog1.ShowDialog();
-                if (saveFileDialog1.FileName != "")
-                {
-                    System.IO.File.WriteAllText(saveFileDialog1.FileName, outputData);
-                }
-                //System.IO.File.WriteAllText(Environment.CurrentDirectory.Replace("bin", "Output").Replace("Debug", "bookmarks.js"), outputData);
+                    System.IO.File.WriteAllText(filePath + "\\" + fileType + ".js", outputData);
             }
             catch (Exception ee)
             {
                 error = true;
                 MessageBox.Show($"error writing file.\n\nError message: {ee.Message}");
-            }
-            finally
-            {
-                if (!error)
-                {
-                    MessageBox.Show($"{fileType} file Created Successfully");
-                }
             }
         }
 

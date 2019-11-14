@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NightTabHelper.exe" size="35736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NightTabHelper.exe" size="49048">
       <assemblyIdentity name="NightTabHelper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WI6YIM9mxtur9rt/hkrHMV2Q/1oTodx7ai/56uVvwLY=</dsig:DigestValue>
+        <dsig:DigestValue>Te8Mftf73bb9TIKNGRMd4a3b/5mcj+EWifm6MJdf/V8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -72,24 +72,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>gKxXKIvI1oB2Ujf3NLkY67/jWCAETGNca3j2WtIebak=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Output\oldBookmarks.js" size="1794">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>D5Z3BNgcGEOIX7IwzdRQZYZXrmUx6pXGTCrFnrtnGKU=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Output\oldState.js" size="4686">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>S2bjxOhYcXmX6hFzpmnvbPRGIyzJqadGhgOMz+ivnec=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -32,7 +32,6 @@
             this.selectBtn = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.exportBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -45,7 +44,7 @@
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(85, 29);
             this.selectBtn.TabIndex = 0;
-            this.selectBtn.Text = "Select File";
+            this.selectBtn.Text = "Convert file";
             this.selectBtn.UseVisualStyleBackColor = true;
             this.selectBtn.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -68,23 +67,11 @@
             this.linkLabel2.Size = new System.Drawing.Size(100, 23);
             this.linkLabel2.TabIndex = 0;
             // 
-            // exportBtn
-            // 
-            this.exportBtn.Location = new System.Drawing.Point(74, 36);
-            this.exportBtn.Name = "exportBtn";
-            this.exportBtn.Size = new System.Drawing.Size(85, 29);
-            this.exportBtn.TabIndex = 2;
-            this.exportBtn.Text = "Export Files";
-            this.exportBtn.UseVisualStyleBackColor = true;
-            this.exportBtn.Visible = false;
-            this.exportBtn.Click += new System.EventHandler(this.ExportBtn_Click);
-            // 
             // NightTabHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 105);
-            this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.selectBtn);
@@ -92,6 +79,7 @@
             this.MinimizeBox = false;
             this.Name = "NightTabHelper";
             this.Text = "Night Tab Helper";
+            this.Load += new System.EventHandler(this.NightTabHelper_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,7 +91,6 @@
         private System.Windows.Forms.Button selectBtn;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Button exportBtn;
     }
 }
 

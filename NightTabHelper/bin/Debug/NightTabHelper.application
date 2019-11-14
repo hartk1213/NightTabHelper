@@ -7,14 +7,14 @@
     <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="NightTabHelper.exe.manifest" size="4974">
+    <dependentAssembly dependencyType="install" codebase="NightTabHelper.exe.manifest" size="4178">
       <assemblyIdentity name="NightTabHelper.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QVkke+PQ8OC1NB88ZHlTXnPNTMt+HP1i+Bz2vVW5u98=</dsig:DigestValue>
+        <dsig:DigestValue>pxFJK0gpesGdn7nEY+XKcp5eDG04MLLxUWg4KQKFQF4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
