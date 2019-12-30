@@ -4,6 +4,7 @@ using NightTabHelper.Classes.BookmarkClasses;
 using NightTabHelper.Classes.TemplateClasses;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -50,6 +51,7 @@ namespace NightTabHelper
                     if (!error)
                     {
                         MessageBox.Show($"bookmarks.js and state.js have been successfully created in the following directory \n" + filePath);
+                        Process.Start(filePath);
                     }
                 }
                 catch (SecurityException ex)
