@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>90A1374AA89932C201057E97B138FBE6F2864BF9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8B5201A39551C1862EC0D978D7BD2DA30C858D11</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>NightTabHelper_TemporaryKey.pfx</ManifestKeyFile>
